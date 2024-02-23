@@ -16,6 +16,12 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    buildFeatures {
+        viewBinding = true
+    }
+    dataBinding {
+        enable = true
+    }
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -29,19 +35,20 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
-    dataBinding {
-        enable = true
-    }
+
 }
 val lifecycle_version = "2.7.0"
 val nav_version = "2.7.7"
 dependencies {
+    implementation("android.arch.lifecycle:extensions:1.1.1")
+    implementation("android.arch.lifecycle:viewmodel:1.1.1")
     // room
     implementation("androidx.room:room-runtime:2.6.1")
     annotationProcessor("androidx.room:room-compiler:2.6.1")
+    implementation("androidx.room:room-rxjava3:2.6.1")
     implementation("androidx.navigation:navigation-fragment:$nav_version")
     implementation("androidx.navigation:navigation-ui:$nav_version")
-    implementation("androidx.lifecycle:lifecycle-extensions:$lifecycle_version")
+    implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
     implementation("androidx.lifecycle:lifecycle-common-java8:$lifecycle_version")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")

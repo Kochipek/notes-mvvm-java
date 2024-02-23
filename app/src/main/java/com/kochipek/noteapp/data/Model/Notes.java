@@ -1,4 +1,4 @@
-package com.kochipek.noteapp.Model;
+package com.kochipek.noteapp.data.Model;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
@@ -10,14 +10,14 @@ public class Notes {
     public int id;
 
     @ColumnInfo(name = "title")
-    String title;
+    public String title;
     @ColumnInfo(name = "subtitle")
-    String subtitle;
+    public String subtitle;
     @ColumnInfo(name = "date")
-    String Date;
+    public String date;
     @ColumnInfo(name = "notes")
-    String notes;
+    public String notes;
     @ColumnInfo(name = "notePriority")
-    String notePriority;
+    public String notePriority;
 
 }
