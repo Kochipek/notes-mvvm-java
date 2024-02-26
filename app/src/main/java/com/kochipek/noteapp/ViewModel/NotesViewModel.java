@@ -20,6 +20,8 @@ public class NotesViewModel extends AndroidViewModel {
     }
     public void insertNotes(Notes notes){
         noteRepository.insertNotes(notes);
+        // update live data after inserting new note
+        getAllNotes = noteRepository.getAllNotes;
     }
     public void deleteNotes(int id){
         noteRepository.deleteNotes(id);

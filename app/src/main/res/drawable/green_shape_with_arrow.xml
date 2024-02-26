@@ -1,0 +1,16 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- İlk olarak, oval şeklini ekleyin -->
+    <item>
+        <shape
+            android:shape="oval">
+            <solid android:color="#A8D38D"/>
+        </shape>
+    </item>
+
+    <!-- Ardından, vektörü ekleyin -->
+    <item
+        android:drawable="@drawable/arrow_drop">
+    </item>
+
+</layer-list>

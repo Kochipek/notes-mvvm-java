@@ -3,6 +3,7 @@ package com.kochipek.noteapp.Adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,7 +19,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NotesViewHolde
     MainActivity mainActivity;
     NoteAdapter adapter;
 
-    public NoteAdapter(NoteAdapter adapter, List<Notes> notes, MainActivity mainActivity) {
+    public NoteAdapter(List<Notes> notes, MainActivity mainActivity) {
         this.adapter = adapter;
         this.notes = notes;
         this.mainActivity = mainActivity;
@@ -27,12 +28,27 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NotesViewHolde
     @NonNull
     @Override
     public NoteAdapter.NotesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new NotesViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_notes, parent, false));
+        return new NotesViewHolder(LayoutInflater.from(mainActivity).inflate(R.layout.item_notes, parent, false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull NoteAdapter.NotesViewHolder holder, int position) {
 
+        Notes note = notes.get(position);
+
+        holder.date.setText(note.date);
+        holder.title.setText(note.title);
+        holder.subtitle.setText(note.subtitle);
+
+        switch (note.notePriority) {
+            case "1":
+                holder.priorityIndicator.setBackgroundResource(R.drawable.green_shape);
+                break;
+            case "2":
+                holder.priorityIndicator.setBackgroundResource(R.drawable.yellow_shape);                break;
+            case "3":
+                holder.priorityIndicator.setBackgroundResource(R.drawable.red_shape);                break;
+        }
     }
 
     @Override
@@ -41,9 +57,16 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NotesViewHolde
     }
 
     public static class NotesViewHolder extends RecyclerView.ViewHolder {
+
+        TextView title, subtitle, date;
+        View priorityIndicator;
         public NotesViewHolder(View itemView) {
             super(itemView);
 
+            title = itemView.findViewById(R.id.noteTitle);
+            subtitle = itemView.findViewById(R.id.noteSubtitle);
+            date = itemView.findViewById(R.id.noteDate);
+            priorityIndicator = itemView.findViewById(R.id.notePriorityIndicator);
         }
     }
 }

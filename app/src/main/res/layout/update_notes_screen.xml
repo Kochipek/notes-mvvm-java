@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
         <EditText
-            android:id="@+id/noteTitle"
+            android:id="@+id/updateNoteTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
@@ -25,7 +25,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/noteSubtitle"
+            android:id="@+id/updateNoteSubtitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
@@ -88,7 +88,7 @@
         </LinearLayout>
 
         <EditText
-            android:id="@+id/note"
+            android:id="@+id/updateNote"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:layout_marginLeft="16dp"

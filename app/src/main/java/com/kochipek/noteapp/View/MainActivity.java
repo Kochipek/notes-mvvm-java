@@ -26,12 +26,13 @@ public class MainActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
         binding.floatingActionButton.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, AddNoteScreen.class)));
-        notesRecycler = findViewById(binding.recyclerView.getId());
-
+        notesRecycler = binding.recyclerView;
         notesViewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()).create(NotesViewModel.class);
         notesViewModel.getAllNotes.observe(this, notes -> {
-            notesRecycler.setLayoutManager(new GridLayoutManager(this, 3));
-            notesRecycler.setAdapter(new NoteAdapter(adapter, notes, MainActivity.this));
+            notesRecycler.setLayoutManager(new GridLayoutManager(this, 2));
+            adapter = new NoteAdapter(notes, MainActivity.this);
+            notesRecycler.setAdapter(adapter);
         });
     }
+
 }
