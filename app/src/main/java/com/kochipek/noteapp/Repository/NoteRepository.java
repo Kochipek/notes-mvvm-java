@@ -1,13 +1,12 @@
 package com.kochipek.noteapp.Repository;
 
 import android.app.Application;
-import android.content.Context;
 
 import androidx.lifecycle.LiveData;
 
+import com.kochipek.noteapp.data.Model.Notes;
 import com.kochipek.noteapp.data.local.Dao.NotesDao;
 import com.kochipek.noteapp.data.local.Database.NotesDb;
-import com.kochipek.noteapp.data.Model.Notes;
 
 import java.util.List;
 

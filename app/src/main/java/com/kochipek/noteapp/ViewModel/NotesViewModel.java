@@ -1,7 +1,6 @@
 package com.kochipek.noteapp.ViewModel;
 
 import android.app.Application;
-import android.content.Context;
 
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
@@ -28,4 +27,6 @@ public class NotesViewModel extends AndroidViewModel {
     public void updateNotes(Notes notes){
         noteRepository.updateNotes(notes);
     }
+
+
 }
