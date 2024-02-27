@@ -29,6 +29,4 @@ public class NotesViewModel extends AndroidViewModel {
     public void updateNotes(Notes notes){
         noteRepository.updateNotes(notes);
     }
-
-
 }

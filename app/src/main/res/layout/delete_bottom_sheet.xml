@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:id="@+id/bottomDeleteSheet"
+    >
+
+    <View
+        android:layout_width="100dp"
+        android:layout_height="5dp"
+        android:background="@drawable/delete_indicator"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Are you sure you want to delete\n this note?"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="This action cannot be undone."
+        android:textSize="14sp"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        />
+
+    <TextView
+        android:id="@+id/delete_button_no"
+        android:layout_width="276dp"
+        android:layout_height="51dp"
+        android:layout_margin="7dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/delete_button_no"
+        android:gravity="center"
+        android:padding="7dp"
+        android:text="No"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/delete_button_yes"
+        android:layout_width="276dp"
+        android:layout_height="51dp"
+        android:layout_margin="7dp"
+        android:background="@drawable/delete_button_yes"
+        android:gravity="center"
+        android:padding="7dp"
+        android:text="Yes"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+</LinearLayout>

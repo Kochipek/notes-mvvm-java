@@ -43,7 +43,5 @@ o
 Q.idea/sonarlint/securityhotspotstore/8/3/830d2983b71b9e074c9da45e62c30c7e32e63b09,7/8/78a4f272aa33270b854a6d5d0092629028a49ab5
 Å
 Q.idea/sonarlint/securityhotspotstore/f/2/f2f87dda2a1629e7f9b9d151f747af262a7962b1,5/2/527090632e2371e05f1294471efa8c8a27b5dce7
-q
-Aapp/src/test/java/com/kochipek/noteapp/AddNoteScreenUnitTest.java,3\c\3c2260550bc7abc96e8d96e89d0d217f113e62cf
 k
 ;app/src/test/java/com/kochipek/noteapp/ExampleUnitTest.java,f\8\f8319bf8db6387302f96cbfa874056cb5f8f3fdd

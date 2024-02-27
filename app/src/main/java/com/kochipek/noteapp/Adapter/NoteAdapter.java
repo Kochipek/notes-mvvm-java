@@ -1,5 +1,6 @@
 package com.kochipek.noteapp.Adapter;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.kochipek.noteapp.R;
 import com.kochipek.noteapp.View.MainActivity;
+import com.kochipek.noteapp.View.UpdateNoteScreen;
+import com.kochipek.noteapp.ViewModel.NotesViewModel;
 import com.kochipek.noteapp.data.Model.Notes;
 
 import java.util.List;
@@ -49,6 +52,16 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NotesViewHolde
             case "3":
                 holder.priorityIndicator.setBackgroundResource(R.drawable.red_shape);                break;
         }
+
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(mainActivity, UpdateNoteScreen.class);
+            intent.putExtra("id", note.id);
+            intent.putExtra("title", note.title);
+            intent.putExtra("subtitle", note.subtitle);
+            intent.putExtra("priority", note.notePriority);
+            intent.putExtra("notes", note.notes);
+            mainActivity.startActivity(intent);
+        });
     }
 
     @Override
