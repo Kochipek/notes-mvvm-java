@@ -1,4 +1,10 @@
 
-v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(»­£ò8ù”éÖÞ1
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(»­£ò8âóÛ§ß1
 h
-java:S1659"FDeclare "uSubtitle" and all following declarations on a separate line.(Ž¢Üšÿÿÿÿÿ8š•éÖÞ1
+java:S1659"FDeclare "uSubtitle" and all following declarations on a separate line.(Ó¹ ªÿÿÿÿÿ8‚áá§ß1
+w
+java:S1450"URemove the "uNotes" field and declare it as a local variable in the relevant methods.(Ó¹ ªÿÿÿÿÿ8‚áá§ß1
+z
+java:S1450"XRemove the "uSubtitle" field and declare it as a local variable in the relevant methods.(Ó¹ ªÿÿÿÿÿ8‚áá§ß1
+w
+java:S1450"URemove the "uTitle" field and declare it as a local variable in the relevant methods.(Ó¹ ªÿÿÿÿÿ8ƒáá§ß1

@@ -13,8 +13,6 @@ import java.util.List;
 public class NoteRepository {
     public NotesDao notesDao;
     public LiveData<List<Notes>> getAllNotes;
-
-    // burada overload yaparak birden fazla parametre alabiliriz
     public NoteRepository(Application application) {
         NotesDb notesDb = NotesDb.getDatabaseInstance(application);
         notesDao = notesDb.notesDao();

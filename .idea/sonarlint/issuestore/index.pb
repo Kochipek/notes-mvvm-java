@@ -10,7 +10,7 @@ Gapp/src/main/java/com/kochipek/noteapp/data/local/Database/NotesDb.java,e\6\e6
 t
 Dapp/src/main/java/com/kochipek/noteapp/ViewModel/NotesViewModel.java,2\c\2c33672cb71aa041f716399c275b584cbd37b9b0
 m
-=app/src/main/java/com/kochipek/noteapp/View/SplashScreen.java,1/b/1b14882cee9a83f9b413072c3732e108331260a5
+=app/src/main/java/com/kochipek/noteapp/View/SplashScreen.java,1\b\1b14882cee9a83f9b413072c3732e108331260a5
 P
  app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 l
