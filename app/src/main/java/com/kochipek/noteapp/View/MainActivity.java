@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.kochipek.noteapp.R;
 import com.kochipek.noteapp.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
-    ActivityMainBinding binding;
+    public ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

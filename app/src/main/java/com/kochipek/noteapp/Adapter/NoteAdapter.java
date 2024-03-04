@@ -10,19 +10,19 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 import com.kochipek.noteapp.R;
 import com.kochipek.noteapp.View.MainActivity;
+import com.kochipek.noteapp.View.NotesFeedFragment;
 import com.kochipek.noteapp.View.NotesFeedFragmentDirections;
 import com.kochipek.noteapp.data.Model.Notes;
+
 import java.util.List;
 
 public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NotesViewHolder> {
     private List<Notes> notes;
     private MainActivity mainActivity;
-
     public NoteAdapter(List<Notes> notes, MainActivity mainActivity) {
         this.notes = notes;
         this.mainActivity = mainActivity;
     }
-
     // Method to update adapter data
     public void updateNotes(List<Notes> updatedNotes) {
         notes.clear();

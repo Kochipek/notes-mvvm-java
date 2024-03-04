@@ -41,10 +41,17 @@ public class NotesFeedFragment extends Fragment {
 
         notesViewModel.getAllNotes.observe(getViewLifecycleOwner(), notes -> {
             adapter.updateNotes(notes); // Update adapter data when new notes are received
-            binding.recyclerView.setLayoutManager(new GridLayoutManager(requireContext(), 2));
-            binding.recyclerView.setAdapter(adapter);
+            if (notes.isEmpty()) {
+                binding.noNotes.setVisibility(View.VISIBLE);
+                binding.imageView2.setVisibility(View.VISIBLE);
+            } else {
+                binding.recyclerView.setVisibility(View.VISIBLE);
+                binding.noNotes.setVisibility(View.GONE);
+                binding.imageView2.setVisibility(View.GONE);
+                binding.recyclerView.setLayoutManager(new GridLayoutManager(requireContext(), 2));
+                binding.recyclerView.setAdapter(adapter);
+            }
         });
 
         binding.floatingActionButton.setOnClickListener(v -> navController.navigate(R.id.action_notesFeedFragment_to_addNoteFragment));
-      }
-}
+    }}
