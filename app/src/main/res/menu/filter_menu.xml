@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <item android:id="@+id/filter_date"
+        android:title="Date"
+        android:enabled="true"
+        />
+    <item android:id="@+id/filter_priority_high"
+        android:title="Priority ascending"
+        android:enabled="true"
+        />
+    <item android:id="@+id/filter_priority_low"
+        android:title="Priority descending"
+        android:enabled="true"
+        />
+</menu>

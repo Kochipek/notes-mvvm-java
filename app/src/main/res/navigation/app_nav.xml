@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_nav"
+    app:startDestination="@id/notesFeedFragment">
+    <fragment
+        android:id="@+id/notesFeedFragment"
+        android:name="com.kochipek.noteapp.View.NotesFeedFragment"
+        android:label="fragment_notes_feed"
+        tools:layout="@layout/fragment_notes_feed" >
+        <action
+            android:id="@+id/action_notesFeedFragment_to_updateNoteFragment"
+            app:destination="@id/updateNoteFragment" />
+        <action
+            android:id="@+id/action_notesFeedFragment_to_addNoteFragment"
+            app:destination="@id/addNoteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateNoteFragment"
+        android:name="com.kochipek.noteapp.View.UpdateNoteFragment"
+        android:label="fragment_update_note"
+        tools:layout="@layout/fragment_update_note" >
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="title"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument
+            android:name="subtitle"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument
+            android:name="priority"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument
+            android:name="notes"
+            app:argType="string"
+            android:defaultValue="" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addNoteFragment"
+        android:name="com.kochipek.noteapp.View.AddNoteFragment"
+        android:label="AddNoteFragment"
+        tools:layout="@layout/fragment_add_note"
+        />
+</navigation>
