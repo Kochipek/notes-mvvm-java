@@ -1,32 +1,37 @@
 package com.kochipek.noteapp.View;
+
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import com.kochipek.noteapp.R;
+import com.kochipek.noteapp.databinding.FragmentAddNoteBinding;
 import com.kochipek.noteapp.ViewModel.NotesViewModel;
 import com.kochipek.noteapp.data.Model.Notes;
-import com.kochipek.noteapp.databinding.AddNoteScreenBinding;
-
-import androidx.lifecycle.ViewModelProvider;
-
 import java.util.Date;
 
-public class AddNoteScreen extends AppCompatActivity {
-    private AddNoteScreenBinding binding;
-    NotesViewModel notesViewModel;
-    String priority = "1";
+public class AddNoteFragment extends Fragment {
+    private FragmentAddNoteBinding binding;
+    private NotesViewModel notesViewModel;
+    private String priority = "1";
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        binding = FragmentAddNoteBinding.inflate(inflater, container, false);
+        return binding.getRoot();
+    }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        binding = AddNoteScreenBinding.inflate(getLayoutInflater());
-        View view = binding.getRoot();
-        setContentView(view);
-        notesViewModel = new ViewModelProvider(this).get(NotesViewModel.class);
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        notesViewModel = new ViewModelProvider(requireActivity()).get(NotesViewModel.class);
         setupPriorityButtons();
         binding.addNoteFab.setOnClickListener(v -> saveNote());
     }
@@ -54,17 +59,16 @@ public class AddNoteScreen extends AppCompatActivity {
     }
 
     private void saveNote() {
-        // Retrieve values from EditTexts when saving the note
+
         String title = binding.addNoteTitle.getText().toString();
         String subtitle = binding.addNoteSubtitle.getText().toString();
         String description = binding.addNoteDescription.getText().toString();
         if (!TextUtils.isEmpty(title) && !TextUtils.isEmpty(subtitle) && !TextUtils.isEmpty(description)) {
             createNote(title, subtitle, description);
         } else {
-            Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
+            Toast.makeText(requireContext(), "Please fill in all fields", Toast.LENGTH_SHORT).show();
         }
     }
-
     private void createNote(String title, String subtitle, String description) {
         Date date = new Date();
         CharSequence sequence = android.text.format.DateFormat.format("dd-MM HH:mm", date.getTime());
@@ -75,6 +79,6 @@ public class AddNoteScreen extends AppCompatActivity {
         notes.date = sequence.toString();
         notes.notePriority = priority;
         notesViewModel.insertNotes(notes);
-        finish();
+        requireActivity().getSupportFragmentManager().popBackStack();
     }
 }

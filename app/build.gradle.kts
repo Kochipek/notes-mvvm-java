@@ -1,5 +1,6 @@
 plugins {
     id("com.android.application")
+    id("androidx.navigation.safeargs")
 }
 
 android {
@@ -42,7 +43,8 @@ val nav_version = "2.7.7"
 dependencies {
     implementation("android.arch.lifecycle:extensions:1.1.1")
     implementation("android.arch.lifecycle:viewmodel:1.1.1")
-    // room
+    implementation ("androidx.navigation:navigation-fragment:$nav_version")
+    implementation ("androidx.navigation:navigation-ui:$nav_version")
     implementation("androidx.room:room-runtime:2.6.1")
     annotationProcessor("androidx.room:room-compiler:2.6.1")
     implementation("androidx.room:room-rxjava3:2.6.1")

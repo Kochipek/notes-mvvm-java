@@ -22,15 +22,20 @@
         </activity>
         <activity
             android:name=".View.MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:label="Notes"
+            >
         </activity>
         <activity
-            android:name=".View.AddNoteScreen"
-            android:exported="true">
-        </activity>
+            android:name=".View.AddNoteFragment"
+            android:exported="true"
+            android:label="Add Note"
+            />
         <activity
-            android:name=".View.UpdateNoteScreen"
-            android:exported="true">
+            android:name=".View.UpdateNoteFragment"
+            android:exported="true"
+            android:label="Update Note"
+            >
         </activity>
     </application>
 

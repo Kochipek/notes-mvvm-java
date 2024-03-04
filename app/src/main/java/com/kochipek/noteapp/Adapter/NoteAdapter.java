@@ -1,31 +1,33 @@
 package com.kochipek.noteapp.Adapter;
 
-import android.content.Intent;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.kochipek.noteapp.R;
 import com.kochipek.noteapp.View.MainActivity;
-import com.kochipek.noteapp.View.UpdateNoteScreen;
-import com.kochipek.noteapp.ViewModel.NotesViewModel;
+import com.kochipek.noteapp.View.NotesFeedFragmentDirections;
 import com.kochipek.noteapp.data.Model.Notes;
-
 import java.util.List;
 
 public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NotesViewHolder> {
-    List<Notes> notes;
-    MainActivity mainActivity;
-    NoteAdapter adapter;
+    private List<Notes> notes;
+    private MainActivity mainActivity;
 
     public NoteAdapter(List<Notes> notes, MainActivity mainActivity) {
-        this.adapter = adapter;
         this.notes = notes;
         this.mainActivity = mainActivity;
+    }
+
+    // Method to update adapter data
+    public void updateNotes(List<Notes> updatedNotes) {
+        notes.clear();
+        notes.addAll(updatedNotes);
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -36,46 +38,46 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NotesViewHolde
 
     @Override
     public void onBindViewHolder(@NonNull NoteAdapter.NotesViewHolder holder, int position) {
-
         Notes note = notes.get(position);
 
         holder.date.setText(note.date);
         holder.title.setText(note.title);
         holder.subtitle.setText(note.subtitle);
 
+        holder.itemView.setOnClickListener(v -> {
+            NotesFeedFragmentDirections.ActionNotesFeedFragmentToUpdateNoteFragment action =
+                    NotesFeedFragmentDirections.actionNotesFeedFragmentToUpdateNoteFragment()
+                            .setId(note.id)
+                            .setTitle(note.title)
+                            .setSubtitle(note.subtitle)
+                            .setPriority(note.notePriority)
+                            .setNotes(note.notes);
+            Navigation.findNavController(v).navigate(action);
+        });
+
+
         switch (note.notePriority) {
             case "1":
-                holder.priorityIndicator.setBackgroundResource(R.drawable.green_shape);
+                holder.priorityIndicator.setBackgroundColor(Color.parseColor("#A8D38D"));
                 break;
             case "2":
-                holder.priorityIndicator.setBackgroundResource(R.drawable.yellow_shape);                break;
+                holder.priorityIndicator.setBackgroundColor(Color.parseColor("#FDFD96"));
+                break;
             case "3":
-                holder.priorityIndicator.setBackgroundResource(R.drawable.red_shape);                break;
+                holder.priorityIndicator.setBackgroundColor(Color.parseColor("#F1583C"));
+                break;
         }
-
-        holder.itemView.setOnClickListener(v -> {
-            Intent intent = new Intent(mainActivity, UpdateNoteScreen.class);
-            intent.putExtra("id", note.id);
-            intent.putExtra("title", note.title);
-            intent.putExtra("subtitle", note.subtitle);
-            intent.putExtra("priority", note.notePriority);
-            intent.putExtra("notes", note.notes);
-            mainActivity.startActivity(intent);
-        });
     }
 
-    @Override
     public int getItemCount() {
         return notes.size();
     }
-
     public static class NotesViewHolder extends RecyclerView.ViewHolder {
-
         TextView title, subtitle, date;
         View priorityIndicator;
+
         public NotesViewHolder(View itemView) {
             super(itemView);
-
             title = itemView.findViewById(R.id.noteTitle);
             subtitle = itemView.findViewById(R.id.noteSubtitle);
             date = itemView.findViewById(R.id.noteDate);

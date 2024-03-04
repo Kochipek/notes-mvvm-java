@@ -1,40 +1,46 @@
 package com.kochipek.noteapp.View;
-
-import android.content.Intent;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
+import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.kochipek.noteapp.R;
-import com.kochipek.noteapp.Repository.NoteRepository;
 import com.kochipek.noteapp.ViewModel.NotesViewModel;
 import com.kochipek.noteapp.data.Model.Notes;
-import com.kochipek.noteapp.databinding.UpdateNotesScreenBinding;
+import com.kochipek.noteapp.databinding.FragmentUpdateNoteBinding;
 
 import java.util.Date;
 
-public class UpdateNoteScreen extends AppCompatActivity {
-    private NotesViewModel notesViewModel;
-    private UpdateNotesScreenBinding binding;
+public class UpdateNoteFragment extends Fragment {
+    private FragmentUpdateNoteBinding binding;
     private String priority;
     private String uTitle, uSubtitle, uPriority, uNotes;
     private int uid;
+    private NotesViewModel notesViewModel;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        binding = UpdateNotesScreenBinding.inflate(getLayoutInflater());
-        View view = binding.getRoot();
-        setContentView(view);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        binding = FragmentUpdateNoteBinding.inflate(inflater, container, false);
+        return binding.getRoot();
+    }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        notesViewModel = new ViewModelProvider(requireActivity()).get(NotesViewModel.class);
         getNoteData();
         setupPriorityButtons();
         setupNoteUpdate();
@@ -47,6 +53,7 @@ public class UpdateNoteScreen extends AppCompatActivity {
             binding.redPriority.setImageResource(R.drawable.red_shape);
             priority = "1";
         });
+
         binding.yellowPriority.setOnClickListener(v -> {
             binding.yellowPriority.setImageResource(R.drawable.yellow_shape_with_arrow);
             binding.greenPriority.setImageResource(R.drawable.green_shape);
@@ -61,17 +68,20 @@ public class UpdateNoteScreen extends AppCompatActivity {
             priority = "3";
         });
     }
-    private void getNoteData() {
-        Intent intent = getIntent();
-        uid = intent.getIntExtra("id", 0);
-        uTitle = intent.getStringExtra("title");
-        uSubtitle = intent.getStringExtra("subtitle");
-        uPriority = intent.getStringExtra("priority");
-        uNotes = intent.getStringExtra("notes");
 
-        binding.updateNoteTitle.setText(uTitle);
-        binding.updateNoteSubtitle.setText(uSubtitle);
-        binding.updateNote.setText(uNotes);
+    private void getNoteData() {
+        if (getArguments() != null) {
+            UpdateNoteFragmentArgs args = UpdateNoteFragmentArgs.fromBundle(getArguments());
+            uid = args.getId();
+            uTitle = args.getTitle();
+            uSubtitle = args.getSubtitle();
+            uPriority = args.getPriority();
+            uNotes = args.getNotes();
+
+            binding.updateNoteTitle.setText(uTitle);
+            binding.updateNoteSubtitle.setText(uSubtitle);
+            binding.updateNote.setText(uNotes);
+        }
     }
 
     private void setupNoteUpdate() {
@@ -81,7 +91,7 @@ public class UpdateNoteScreen extends AppCompatActivity {
             String notes = binding.updateNote.getText().toString();
 
             if (title.isEmpty() || subtitle.isEmpty() || notes.isEmpty()) {
-                Toast.makeText(this, "Please fill all the fields", Toast.LENGTH_SHORT).show();
+                Toast.makeText(requireContext(), "Please fill all the fields", Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -90,6 +100,7 @@ public class UpdateNoteScreen extends AppCompatActivity {
             }
 
             updateNote(title, subtitle, notes);
+            requireActivity().getSupportFragmentManager().popBackStack();
         });
     }
 
@@ -105,42 +116,36 @@ public class UpdateNoteScreen extends AppCompatActivity {
         note.notePriority = priority;
 
         if (notesViewModel == null) {
-            notesViewModel = new NotesViewModel(getApplication());
+            notesViewModel = new ViewModelProvider(this).get(NotesViewModel.class);
         }
-
         notesViewModel.updateNotes(note);
-        finish();
     }
 
+  // bottom dialogu bagliyoruz
+  @Override
+  public void onCreate(@Nullable Bundle savedInstanceState) {
+      super.onCreate(savedInstanceState);
+      setHasOptionsMenu(true);
+  }
+
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.delete_menu, menu);
-        return super.onCreateOptionsMenu(menu);
+    public void onCreateOptionsMenu(@NonNull android.view.Menu menu, @NonNull MenuInflater inflater) {
+        inflater.inflate(R.menu.delete_menu, menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.delete) {
-            showDeleteConfirmationDialog();
+            BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
+            bottomSheetDialog.setContentView(R.layout.delete_bottom_sheet);
+            bottomSheetDialog.findViewById(R.id.delete_button_yes).setOnClickListener(v -> {
+                notesViewModel.deleteNotes(uid);
+                requireActivity().getSupportFragmentManager().popBackStack();
+                bottomSheetDialog.dismiss();
+            });
+            bottomSheetDialog.findViewById(R.id.delete_button_no).setOnClickListener(v -> bottomSheetDialog.dismiss());
+            bottomSheetDialog.show();
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    private void showDeleteConfirmationDialog() {
-        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(UpdateNoteScreen.this, R.style.BottomSheetStyle);
-        View view = LayoutInflater.from(UpdateNoteScreen.this).inflate(R.layout.delete_bottom_sheet, findViewById(R.id.bottomDeleteSheet));
-        bottomSheetDialog.setContentView(view);
-
-        view.findViewById(R.id.delete_button_no).setOnClickListener(v -> bottomSheetDialog.dismiss());
-        view.findViewById(R.id.delete_button_yes).setOnClickListener(v -> deleteNote());
-        bottomSheetDialog.show();
-    }
-
-    private void deleteNote() {
-        if (notesViewModel == null) {
-            notesViewModel = new NotesViewModel(getApplication());
-        }
-        notesViewModel.deleteNotes(uid);
-        finish();
     }
 }

@@ -15,10 +15,6 @@ P
  app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 l
 <app/src/main/java/com/kochipek/noteapp/data/Model/Notes.java,8\3\830d2983b71b9e074c9da45e62c30c7e32e63b09
-n
->app/src/main/java/com/kochipek/noteapp/View/AddNoteScreen.java,8\7\87c1919d4091aff0649aebf49725b3ff3fa708df
-q
-Aapp/src/main/java/com/kochipek/noteapp/View/UpdateNoteScreen.java,f\2\f2f87dda2a1629e7f9b9d151f747af262a7962b1
 m
 =app/src/main/java/com/kochipek/noteapp/View/MainActivity.java,2\d\2d3b392cd6529661d8374122315c95a5b93feb8e
 @
@@ -41,7 +37,11 @@ o
 ?app/src/main/java/com/kochipek/noteapp/Adapter/NoteAdapter.java,4\7\472d45ee4f33b3f43eefafbc9379a5b1f6ffab9e
 Å
 Q.idea/sonarlint/securityhotspotstore/8/3/830d2983b71b9e074c9da45e62c30c7e32e63b09,7/8/78a4f272aa33270b854a6d5d0092629028a49ab5
-Å
-Q.idea/sonarlint/securityhotspotstore/f/2/f2f87dda2a1629e7f9b9d151f747af262a7962b1,5/2/527090632e2371e05f1294471efa8c8a27b5dce7
 k
 ;app/src/test/java/com/kochipek/noteapp/ExampleUnitTest.java,f\8\f8319bf8db6387302f96cbfa874056cb5f8f3fdd
+r
+Bapp/src/main/java/com/kochipek/noteapp/View/NotesFeedFragment.java,6\8\683d1d497e1137075ee951882f5faa2dccd52698
+p
+@app/src/main/java/com/kochipek/noteapp/View/AddNoteFragment.java,c\3\c34c5f3d557d6be81da20c40b4b356c1b809126c
+s
+Capp/src/main/java/com/kochipek/noteapp/View/UpdateNoteFragment.java,f\9\f900b512340f162eeb7ccf29be884c4686f66f13
