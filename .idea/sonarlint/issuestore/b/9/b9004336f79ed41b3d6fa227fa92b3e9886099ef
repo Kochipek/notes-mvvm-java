@@ -1,6 +1,12 @@
 
-q
-java:S1104"TMake notesDao a static final constant or non-public and provide accessors if needed.(ñö¹Î8…Ş‰²İ1
-t
-java:S1104"WMake getAllNotes a static final constant or non-public and provide accessors if needed.(ìÈìÜ8…Ş‰²İ1
-{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Œ·ıáıÿÿÿÿ8…Ş‰²İ1
+—
+java:S1104"TMake notesDao a static final constant or non-public and provide accessors if needed.(ñö¹Î8ó¬òá1J$f2c05969-736f-4e4a-99e9-911fe1dc1497
+š
+java:S1104"WMake getAllNotes a static final constant or non-public and provide accessors if needed.(ìÈìÜ8ó¬òá1J$d2f3a1ed-d71b-418c-a486-b3ad7b4ecb50
+˜
+java:S1104"UMake highToLow a static final constant or non-public and provide accessors if needed.(ö‰“®8ó¬òá1J$a9b2f201-9c6a-4804-b019-b9e15ed71885
+˜
+java:S1104"UMake lowToHigh a static final constant or non-public and provide accessors if needed.(ª§êÂ8ó¬òá1J$ad980378-5e19-4bc7-a21a-c9d3a029518a
+›
+java:S1104"XMake filterbydate a static final constant or non-public and provide accessors if needed.(å¨”8²»Õòá1J$f862acaa-547d-486c-9025-4ab18697dc5a
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Œ·ıáıÿÿÿÿ8ó¬òá1J$e63361f0-df03-4fe0-986e-f94b0e34e09e

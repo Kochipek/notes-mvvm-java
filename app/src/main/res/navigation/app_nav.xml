@@ -41,12 +41,18 @@
             android:name="notes"
             app:argType="string"
             android:defaultValue="" />
+        <action
+            android:id="@+id/action_updateNoteFragment_to_notesFeedFragment"
+            app:destination="@id/notesFeedFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/addNoteFragment"
         android:name="com.kochipek.noteapp.View.AddNoteFragment"
         android:label="AddNoteFragment"
-        tools:layout="@layout/fragment_add_note"
-        />
+        tools:layout="@layout/fragment_add_note">
+        <action
+            android:id="@+id/action_addNoteFragment_to_notesFeedFragment"
+            app:destination="@id/notesFeedFragment" />
+    </fragment>
 </navigation>

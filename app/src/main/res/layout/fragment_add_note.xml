@@ -23,7 +23,8 @@
                 android:layout_marginStart="16dp"
                 android:background="@drawable/rounded_text_area"
                 android:hint="@string/title"
-                android:textColorHint="@color/grey"
+                android:textColor="@color/light_grey"
+                android:textColorHint="@color/light_grey"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -34,11 +35,12 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                android:textColorHint="@color/grey"
+                android:textColorHint="@color/light_grey"
                 android:layout_marginRight="16dp"
                 android:layout_marginStart="16dp"
                 android:background="@drawable/rounded_text_area"
                 android:hint="Subtitle"
+                android:textColor="@color/light_grey"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -58,6 +60,8 @@
                     android:layout_height="wrap_content"
                     android:text="Priority: "
                     android:textSize="20sp"
+                    android:textColor="@color/light_grey"
+                    android:textColorHint="@color/light_grey"
                     android:textStyle="bold" />
 
                 <ImageView
@@ -87,21 +91,32 @@
 
             </LinearLayout>
 
-            <EditText
-                android:id="@+id/addNoteDescription"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginStart="16dp"
-                android:background="@android:color/transparent"
-                android:hint="Note"
-                android:textSize="20sp"
-                android:textColorHint="@color/grey"
-                android:gravity="start"
-                android:textStyle="bold" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/pen" />
+
+                <EditText
+                    android:id="@+id/addNoteDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:gravity="start"
+                    android:hint="Note"
+                    android:padding="12dp"
+                    android:textColor="@color/light_grey"
+                    android:textColorHint="@color/light_grey"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
         </LinearLayout>
 
 

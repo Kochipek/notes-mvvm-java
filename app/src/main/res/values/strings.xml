@@ -5,4 +5,7 @@
     <string name="title">Title</string>
     <string name="subtitle">Subtitle</string>
     <string name="note">Note</string>
+    <string name="high">High</string>
+    <string name="medium">medium</string>
+    <string name="low">Low</string>
 </resources>

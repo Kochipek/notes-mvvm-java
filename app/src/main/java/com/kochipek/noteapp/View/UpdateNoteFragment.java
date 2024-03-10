@@ -1,9 +1,7 @@
 package com.kochipek.noteapp.View;
-import android.app.AlertDialog;
-import android.app.Dialog;
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.kochipek.noteapp.R;
@@ -100,7 +99,7 @@ public class UpdateNoteFragment extends Fragment {
             }
 
             updateNote(title, subtitle, notes);
-            requireActivity().getSupportFragmentManager().popBackStack();
+            Navigation.findNavController(requireView()).navigate(R.id.action_updateNoteFragment_to_notesFeedFragment);
         });
     }
 
@@ -121,22 +120,23 @@ public class UpdateNoteFragment extends Fragment {
         notesViewModel.updateNotes(note);
     }
 
-  // bottom dialogu bagliyoruz
-  @Override
-  public void onCreate(@Nullable Bundle savedInstanceState) {
-      super.onCreate(savedInstanceState);
-      setHasOptionsMenu(true);
-  }
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
 
+    // bottom dialogu bagliyoruz
     @Override
     public void onCreateOptionsMenu(@NonNull android.view.Menu menu, @NonNull MenuInflater inflater) {
         inflater.inflate(R.menu.delete_menu, menu);
+        super.onCreateOptionsMenu(menu, inflater);
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.delete) {
-            BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
+            BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext(), R.style.BottomSheetStyle);
             bottomSheetDialog.setContentView(R.layout.delete_bottom_sheet);
             bottomSheetDialog.findViewById(R.id.delete_button_yes).setOnClickListener(v -> {
                 notesViewModel.deleteNotes(uid);

@@ -5,12 +5,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.kochipek.noteapp.R;
 import com.kochipek.noteapp.View.MainActivity;
-import com.kochipek.noteapp.View.NotesFeedFragment;
 import com.kochipek.noteapp.View.NotesFeedFragmentDirections;
 import com.kochipek.noteapp.data.Model.Notes;
 
@@ -58,7 +59,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NotesViewHolde
 
         switch (note.notePriority) {
             case "1":
-                holder.priorityIndicator.setBackgroundColor(Color.parseColor("#A8D38D"));
+                holder.priorityIndicator.setBackgroundColor(Color.parseColor("#00A86B"));
                 break;
             case "2":
                 holder.priorityIndicator.setBackgroundColor(Color.parseColor("#FDFD96"));

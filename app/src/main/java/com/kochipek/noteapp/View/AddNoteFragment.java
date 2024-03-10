@@ -6,14 +6,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
+
 import com.kochipek.noteapp.R;
-import com.kochipek.noteapp.databinding.FragmentAddNoteBinding;
 import com.kochipek.noteapp.ViewModel.NotesViewModel;
 import com.kochipek.noteapp.data.Model.Notes;
+import com.kochipek.noteapp.databinding.FragmentAddNoteBinding;
+
 import java.util.Date;
 
 public class AddNoteFragment extends Fragment {
@@ -79,6 +83,6 @@ public class AddNoteFragment extends Fragment {
         notes.date = sequence.toString();
         notes.notePriority = priority;
         notesViewModel.insertNotes(notes);
-        requireActivity().getSupportFragmentManager().popBackStack();
+        Navigation.findNavController(requireView()).navigate(R.id.action_addNoteFragment_to_notesFeedFragment);
     }
 }
