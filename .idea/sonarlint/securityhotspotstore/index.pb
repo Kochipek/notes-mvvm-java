@@ -1,6 +1,6 @@
 
 D
-app/build.gradle.kts,d\2\d2a4383452aad84a18429a5844d31330a012a9e6
+app/build.gradle.kts,d/2/d2a4383452aad84a18429a5844d31330a012a9e6
 u
 Eapp/src/main/java/com/kochipek/noteapp/Repository/NoteRepository.java,b/9/b9004336f79ed41b3d6fa227fa92b3e9886099ef
 s
@@ -18,7 +18,7 @@ l
 m
 =app/src/main/java/com/kochipek/noteapp/View/MainActivity.java,2/d/2d3b392cd6529661d8374122315c95a5b93feb8e
 @
-build.gradle.kts,d\b\dbcff70658daf80b53ce624f6adcaa529df5ed8d
+build.gradle.kts,d/b/dbcff70658daf80b53ce624f6adcaa529df5ed8d
 A
 gradle.properties,2\a\2afbb999f001938c88fa43fc2ef52abf0f8213e4
 Å
@@ -51,3 +51,9 @@ Q.idea/sonarlint/securityhotspotstore/c/3/c34c5f3d557d6be81da20c40b4b356c1b80912
 Q.idea/sonarlint/securityhotspotstore/6/8/683d1d497e1137075ee951882f5faa2dccd52698,5/1/51030e0f0c45e842a4512747efa9a0d7ee97f9eb
 Å
 Q.idea/sonarlint/securityhotspotstore/4/7/472d45ee4f33b3f43eefafbc9379a5b1f6ffab9e,f/e/fecbdf0c52a801da3fac20fe44bb885488068ac9
+m
+=app/src/main/java/com/kochipek/noteapp/SharedPreferences.java,2/e/2e2c680a909609a6d9a11241956999fdfd4ccd1c
+s
+Capp/src/main/java/com/kochipek/noteapp/SharedPreferencesHelper.java,7/7/7784437f9ae84623f7e0290f8d2caf1453290699
+q
+Aapp/src/main/java/com/kochipek/noteapp/utils/TutorialManager.java,f/2/f2edacbbf3de0ff6b4364353f579b222f604b528

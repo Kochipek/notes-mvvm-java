@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 
 import com.kochipek.noteapp.Adapter.NoteAdapter;
 import com.kochipek.noteapp.R;
+import com.kochipek.noteapp.SharedPreferencesHelper;
 import com.kochipek.noteapp.ViewModel.NotesViewModel;
 import com.kochipek.noteapp.databinding.FragmentNotesFeedBinding;
 
@@ -29,11 +30,18 @@ public class NotesFeedFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = FragmentNotesFeedBinding.inflate(inflater, container, false);
         return binding.getRoot();
+
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        // Check if the user is enter the app for the first time
+
+        if (!SharedPreferencesHelper.isTutorialCompleted(requireActivity())) {
+            startShowcaseWalkthrough();
+        }
+
         NotesViewModel notesViewModel = new ViewModelProvider(requireActivity()).get(NotesViewModel.class);
         NavController navController = NavHostFragment.findNavController(NotesFeedFragment.this);
         adapter = new NoteAdapter(new ArrayList<>(), (MainActivity) requireActivity()); // Initialize adapter with empty list
@@ -78,5 +86,10 @@ public class NotesFeedFragment extends Fragment {
         });
 
         binding.floatingActionButton.setOnClickListener(v -> navController.navigate(R.id.action_notesFeedFragment_to_addNoteFragment));
+    }
+
+    private void startShowcaseWalkthrough() {
+        ((MainActivity) requireActivity()).startShowcaseWalkthrough();
+        SharedPreferencesHelper.setTutorialCompleted(requireContext(), true); // Marking tutorial as completed
     }
 }

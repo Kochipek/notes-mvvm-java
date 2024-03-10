@@ -1,12 +1,13 @@
 
-?kotlin:S6624," Do not hardcode version numbers.(ëÓ8Ê÷Óà1
-?kotlin:S6624-" Do not hardcode version numbers.(œŸ³º8Ì÷Óà1
-?kotlin:S66240" Do not hardcode version numbers.(ï¶ì±8Ì÷Óà1
-Dkotlin:S66241" Do not hardcode version numbers.(ÄĞâ¢ÿÿÿÿÿ8Ì÷Óà1
-?kotlin:S66242" Do not hardcode version numbers.(ã¦‹ã8Ì÷Óà1
-?kotlin:S66245" Do not hardcode version numbers.(¦ŸÓ8Ì÷Óà1
-Dkotlin:S66247" Do not hardcode version numbers.(Î¹×•ÿÿÿÿÿ8Ì÷Óà1
-Dkotlin:S66248" Do not hardcode version numbers.(€ü“Ùúÿÿÿÿ8Í÷Óà1
-Dkotlin:S66249" Do not hardcode version numbers.(Œ¹Š’ıÿÿÿÿ8Í÷Óà1
-Dkotlin:S6624:" Do not hardcode version numbers.(˜°Ö“üÿÿÿÿ8Í÷Óà1
-Lkotlin:S6629+"(Group dependencies by their destination.(«±°¢ùÿÿÿÿ8Ï÷Óà1
+ekotlin:S6624," Do not hardcode version numbers.(ëÓ8Ë¾®Òâ1J$868014a3-dfe7-42af-8a55-8431a3605ec9
+ekotlin:S6624-" Do not hardcode version numbers.(œŸ³º8Ë¾®Òâ1J$bda4f9c8-4cf4-4697-b1de-9ea8ff50d0f4
+ekotlin:S66240" Do not hardcode version numbers.(ï¶ì±8Ë¾®Òâ1J$437dea4d-8b0a-4e3a-bbe2-6303a5ce20ae
+jkotlin:S66241" Do not hardcode version numbers.(ÄĞâ¢ÿÿÿÿÿ8Ë¾®Òâ1J$663fd765-231e-48de-81bd-b7c11b2cc7fa
+ekotlin:S66242" Do not hardcode version numbers.(‹Ñàé8Ë¾®Òâ1J$c1edf4d3-820b-47ba-bfe9-e8589f5600d2
+ekotlin:S66243" Do not hardcode version numbers.(ã¦‹ã8Ì¾®Òâ1J$83b3f9f8-471e-4d3f-a8da-87b721befd70
+ekotlin:S66246" Do not hardcode version numbers.(¦ŸÓ8Ì¾®Òâ1J$981dfa26-1220-49a8-b8af-26af964d277e
+jkotlin:S66248" Do not hardcode version numbers.(Î¹×•ÿÿÿÿÿ8Ì¾®Òâ1J$75d164e9-a671-41b1-ad98-d16c8e5b176b
+jkotlin:S66249" Do not hardcode version numbers.(€ü“Ùúÿÿÿÿ8Ì¾®Òâ1J$7ed17bad-8d54-43d9-adec-75fa354b100c
+jkotlin:S6624:" Do not hardcode version numbers.(Œ¹Š’ıÿÿÿÿ8Ì¾®Òâ1J$75d3b195-e759-4da8-b0a3-ad1e81107e05
+jkotlin:S6624;" Do not hardcode version numbers.(˜°Ö“üÿÿÿÿ8Ì¾®Òâ1J$190d4f0c-5667-411e-b25a-4742d4c0146a
+rkotlin:S6629+"(Group dependencies by their destination.(«±°¢ùÿÿÿÿ8Î¾®Òâ1J$2ea5f93e-17de-49ef-997b-f1f14cc6a64b

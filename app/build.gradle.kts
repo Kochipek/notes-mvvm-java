@@ -47,6 +47,7 @@ dependencies {
     implementation ("androidx.navigation:navigation-ui:$nav_version")
     implementation("androidx.room:room-runtime:2.6.1")
     annotationProcessor("androidx.room:room-compiler:2.6.1")
+    implementation("com.getkeepsafe.taptargetview:taptargetview:1.13.3")
     implementation("androidx.room:room-rxjava3:2.6.1")
     implementation("androidx.navigation:navigation-fragment:$nav_version")
     implementation("androidx.navigation:navigation-ui:$nav_version")
