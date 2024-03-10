@@ -1,12 +1,9 @@
 package com.kochipek.noteapp.View;
 
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.EditorInfo;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,6 +12,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.GridLayoutManager;
+
 import com.kochipek.noteapp.Adapter.NoteAdapter;
 import com.kochipek.noteapp.R;
 import com.kochipek.noteapp.ViewModel.NotesViewModel;
@@ -32,6 +30,7 @@ public class NotesFeedFragment extends Fragment {
         binding = FragmentNotesFeedBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -39,11 +38,36 @@ public class NotesFeedFragment extends Fragment {
         NavController navController = NavHostFragment.findNavController(NotesFeedFragment.this);
         adapter = new NoteAdapter(new ArrayList<>(), (MainActivity) requireActivity()); // Initialize adapter with empty list
 
+        binding.lowButton.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                binding.highButton.setChecked(false);
+                binding.dateButton.setChecked(false);
+                notesViewModel.lotToHigh.observe(getViewLifecycleOwner(), notes -> adapter.updateNotes(notes));
+            }
+        });
+
+        binding.highButton.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                binding.lowButton.setChecked(false);
+                binding.dateButton.setChecked(false);
+                notesViewModel.highToLow.observe(getViewLifecycleOwner(), notes -> adapter.updateNotes(notes));
+            }
+        });
+
+        binding.dateButton.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                binding.lowButton.setChecked(false);
+                binding.highButton.setChecked(false);
+                notesViewModel.filterbydate.observe(getViewLifecycleOwner(), notes -> adapter.updateNotes(notes));
+            }
+        });
+
         notesViewModel.getAllNotes.observe(getViewLifecycleOwner(), notes -> {
-            adapter.updateNotes(notes); // Update adapter data when new notes are received
+            adapter.updateNotes(notes);
             if (notes.isEmpty()) {
                 binding.noNotes.setVisibility(View.VISIBLE);
                 binding.imageView2.setVisibility(View.VISIBLE);
+                binding.recyclerView.setVisibility(View.GONE);
             } else {
                 binding.recyclerView.setVisibility(View.VISIBLE);
                 binding.noNotes.setVisibility(View.GONE);
@@ -54,4 +78,5 @@ public class NotesFeedFragment extends Fragment {
         });
 
         binding.floatingActionButton.setOnClickListener(v -> navController.navigate(R.id.action_notesFeedFragment_to_addNoteFragment));
-    }}
+    }
+}

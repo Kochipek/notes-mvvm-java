@@ -18,6 +18,14 @@ public interface NotesDao {
     @Query("SELECT * FROM notes_table ORDER BY id DESC")
     LiveData<List<Notes>> getAllNotes();
 
+    @Query("SELECT * FROM notes_table ORDER BY notePriority DESC")
+    LiveData<List<Notes>> highToLow();
+
+    @Query("SELECT * FROM notes_table ORDER BY notePriority ASC")
+    LiveData<List<Notes>> lowToHigh();
+
+    @Query("SELECT * FROM notes_table ORDER BY date DESC")
+    LiveData<List<Notes>> filterbydate();
     @Query("DELETE FROM notes_table WHERE id = :id")
     void deleteNotes(int id);
 

@@ -13,10 +13,17 @@ import java.util.List;
 public class NoteRepository {
     public NotesDao notesDao;
     public LiveData<List<Notes>> getAllNotes;
+    public LiveData<List<Notes>> highToLow;
+    public LiveData<List<Notes>> lowToHigh;
+    public LiveData<List<Notes>> filterbydate;
+
     public NoteRepository(Application application) {
         NotesDb notesDb = NotesDb.getDatabaseInstance(application);
         notesDao = notesDb.notesDao();
         getAllNotes = notesDao.getAllNotes();
+        highToLow = notesDao.highToLow();
+        lowToHigh = notesDao.lowToHigh();
+        filterbydate = notesDao.filterbydate();
     }
     public void insertNotes(Notes notes){
         notesDao.insertNotes(notes);
@@ -28,4 +35,5 @@ public class NoteRepository {
     public void updateNotes(Notes notes){
         notesDao.updateNotes(notes);
     }
+
 }
