@@ -24,7 +24,10 @@ This App is developed as a learning project to get into Android development usin
 
 **TapTargetView Library**: Library for displaying sequence of tap targets with descriptions.
 
+
+
 ## Screenshots
+### The logo used in this application has been created by AI.
 | Splash       | Empty Feed           | Notes 
 | ------------- |:-------------:| -----:|
 | <img src="screenshots/screenshot1.png" width="300px"> </img>      | <img src="screenshots/Screenshot12.png" width="300px"> </img> |<img src="screenshots/Screenshot2.png" width="300px"> </img> |
