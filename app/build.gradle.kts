@@ -40,7 +40,10 @@ android {
 }
 val lifecycle_version = "2.7.0"
 val nav_version = "2.7.7"
+val appCenterSdkVersion = "5.0.4"
 dependencies {
+    implementation("com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}")
+    implementation("com.microsoft.appcenter:appcenter-crashes:${appCenterSdkVersion}")
     implementation("android.arch.lifecycle:extensions:1.1.1")
     implementation("android.arch.lifecycle:viewmodel:1.1.1")
     implementation ("androidx.navigation:navigation-fragment:$nav_version")

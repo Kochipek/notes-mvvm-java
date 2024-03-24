@@ -17,6 +17,8 @@ public class NoteRepository {
     public LiveData<List<Notes>> lowToHigh;
     public LiveData<List<Notes>> filterbydate;
 
+    public LiveData<List<Notes>> searchbyquery;
+
     public NoteRepository(Application application) {
         NotesDb notesDb = NotesDb.getDatabaseInstance(application);
         notesDao = notesDb.notesDao();
@@ -24,6 +26,7 @@ public class NoteRepository {
         highToLow = notesDao.highToLow();
         lowToHigh = notesDao.lowToHigh();
         filterbydate = notesDao.filterbydate();
+
     }
     public void insertNotes(Notes notes){
         notesDao.insertNotes(notes);

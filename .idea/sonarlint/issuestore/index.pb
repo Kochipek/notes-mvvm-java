@@ -14,7 +14,7 @@ m
 P
  app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
 l
-<app/src/main/java/com/kochipek/noteapp/data/Model/Notes.java,8\3\830d2983b71b9e074c9da45e62c30c7e32e63b09
+<app/src/main/java/com/kochipek/noteapp/data/Model/Notes.java,8/3/830d2983b71b9e074c9da45e62c30c7e32e63b09
 m
 =app/src/main/java/com/kochipek/noteapp/View/MainActivity.java,2/d/2d3b392cd6529661d8374122315c95a5b93feb8e
 @
@@ -51,9 +51,5 @@ Q.idea/sonarlint/securityhotspotstore/c/3/c34c5f3d557d6be81da20c40b4b356c1b80912
 Q.idea/sonarlint/securityhotspotstore/6/8/683d1d497e1137075ee951882f5faa2dccd52698,5/1/51030e0f0c45e842a4512747efa9a0d7ee97f9eb
 
 Q.idea/sonarlint/securityhotspotstore/4/7/472d45ee4f33b3f43eefafbc9379a5b1f6ffab9e,f/e/fecbdf0c52a801da3fac20fe44bb885488068ac9
-m
-=app/src/main/java/com/kochipek/noteapp/SharedPreferences.java,2/e/2e2c680a909609a6d9a11241956999fdfd4ccd1c
 s
 Capp/src/main/java/com/kochipek/noteapp/SharedPreferencesHelper.java,7/7/7784437f9ae84623f7e0290f8d2caf1453290699
-q
-Aapp/src/main/java/com/kochipek/noteapp/utils/TutorialManager.java,f/2/f2edacbbf3de0ff6b4364353f579b222f604b528

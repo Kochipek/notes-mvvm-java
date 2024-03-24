@@ -1,12 +1,14 @@
 
 —
-java:S1104"TMake notesDao a static final constant or non-public and provide accessors if needed.(ñö¹Î8ó¬òá1J$f2c05969-736f-4e4a-99e9-911fe1dc1497
+java:S1104"TMake notesDao a static final constant or non-public and provide accessors if needed.(ñö¹Î8ó¬òá1J$f5f0692c-203d-4b85-9a8e-720a9a0c6086
 š
-java:S1104"WMake getAllNotes a static final constant or non-public and provide accessors if needed.(ìÈìÜ8ó¬òá1J$d2f3a1ed-d71b-418c-a486-b3ad7b4ecb50
+java:S1104"WMake getAllNotes a static final constant or non-public and provide accessors if needed.(ìÈìÜ8ó¬òá1J$e3eda497-c712-4c95-9625-c3aee2d73fe0
 ˜
-java:S1104"UMake highToLow a static final constant or non-public and provide accessors if needed.(ö‰“®8ó¬òá1J$a9b2f201-9c6a-4804-b019-b9e15ed71885
+java:S1104"UMake highToLow a static final constant or non-public and provide accessors if needed.(ö‰“®8ó¬òá1J$6920e397-b5ba-40c4-bb6c-5d440d14eb7c
 ˜
-java:S1104"UMake lowToHigh a static final constant or non-public and provide accessors if needed.(ª§êÂ8ó¬òá1J$ad980378-5e19-4bc7-a21a-c9d3a029518a
+java:S1104"UMake lowToHigh a static final constant or non-public and provide accessors if needed.(ª§êÂ8ó¬òá1J$ad9ac063-2d36-43a3-b423-e0c939d5a091
 ›
-java:S1104"XMake filterbydate a static final constant or non-public and provide accessors if needed.(å¨”8²»Õòá1J$f862acaa-547d-486c-9025-4ab18697dc5a
-¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Œ·ıáıÿÿÿÿ8ó¬òá1J$e63361f0-df03-4fe0-986e-f94b0e34e09e
+java:S1104"XMake filterbydate a static final constant or non-public and provide accessors if needed.(å¨”8²»Õòá1J$376c41f2-6b35-4799-99c1-e53f9b3d3b65
+¡
+java:S1104"YMake searchbyquery a static final constant or non-public and provide accessors if needed.(ÍƒÎ¥üÿÿÿÿ8Şúí”ä1J$8e9f4fdc-570d-4a3f-a53e-721817ca5485
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Œ·ıáıÿÿÿÿ8ó¬òá1J$9b417292-eda7-4e43-89dc-89b57f26e238

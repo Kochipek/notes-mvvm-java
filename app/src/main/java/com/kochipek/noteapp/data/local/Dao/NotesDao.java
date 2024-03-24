@@ -28,7 +28,7 @@ public interface NotesDao {
     LiveData<List<Notes>> filterbydate();
     @Query("DELETE FROM notes_table WHERE id = :id")
     void deleteNotes(int id);
-
     @Update
     void updateNotes(Notes note);
+
 }

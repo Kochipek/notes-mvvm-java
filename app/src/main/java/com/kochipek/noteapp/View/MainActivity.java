@@ -9,6 +9,9 @@ import com.getkeepsafe.taptargetview.TapTarget;
 import com.getkeepsafe.taptargetview.TapTargetView;
 import com.kochipek.noteapp.R;
 import com.kochipek.noteapp.databinding.ActivityMainBinding;
+import com.microsoft.appcenter.AppCenter;
+import com.microsoft.appcenter.analytics.Analytics;
+import com.microsoft.appcenter.crashes.Crashes;
 
 public class MainActivity extends AppCompatActivity {
     public ActivityMainBinding binding;
@@ -19,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        AppCenter.start(getApplication(), "{\"afe0f8bd-eb57-4832-917f-b5891c9f5315\"}",
+                Analytics.class, Crashes.class);
     }
 
     private void showTapTarget(int viewId, String title, String description, final int nextStep, boolean cancelable) {

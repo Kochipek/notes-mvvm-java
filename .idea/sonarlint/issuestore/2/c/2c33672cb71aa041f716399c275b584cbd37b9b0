@@ -1,12 +1,14 @@
 
 
-java:S1104"ZMake noteRepository a static final constant or non-public and provide accessors if needed.(Ñšé¡8´×ÈÔâ1J$329b923c-0552-421f-af9a-ec1bc15bd706
+java:S1104"ZMake noteRepository a static final constant or non-public and provide accessors if needed.(Ñšé¡8ºĞŞ†ç1J$c0f4b56c-53a3-4974-89f6-6e9609a7791c
 š
-java:S1104"WMake getAllNotes a static final constant or non-public and provide accessors if needed.(ìÈìÜ8´×ÈÔâ1J$f35b5f4a-e0e3-4f76-b3a6-a39da488ade9
+java:S1104"WMake getAllNotes a static final constant or non-public and provide accessors if needed.(ìÈìÜ8»ĞŞ†ç1J$67e78724-f30b-42d5-975b-e238d66e6a02
 ˜
-java:S1104"UMake highToLow a static final constant or non-public and provide accessors if needed.(ö‰“®8´×ÈÔâ1J$ce533bd8-61d7-42ec-8ba4-3f14faf2833b
+java:S1104"UMake highToLow a static final constant or non-public and provide accessors if needed.(ö‰“®8»ĞŞ†ç1J$561d93f6-d9e2-4f0a-ab26-2f3d6a244fed
 ˜
-java:S1104"UMake lotToHigh a static final constant or non-public and provide accessors if needed.(òäÊÊ8´×ÈÔâ1J$0c8f67af-615e-4c88-ad4f-170743ebd517
+java:S1104"UMake lotToHigh a static final constant or non-public and provide accessors if needed.(òäÊÊ8»ĞŞ†ç1J$70313986-ff23-4e0a-a931-06455efcde95
 ›
-java:S1104"XMake filterbydate a static final constant or non-public and provide accessors if needed.(å¨”8µ×ÈÔâ1J$0ab8d376-6987-4546-b21e-261185b4aed6
-œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¡üåñ8µ×ÈÔâ1J$474d9385-80d2-4b4d-8e95-86605cd0504f
+java:S1104"XMake filterbydate a static final constant or non-public and provide accessors if needed.(å¨”8»ĞŞ†ç1J$636980c8-4332-4004-9266-cb74b72bb723
+¡
+java:S1104"YMake searchbyquery a static final constant or non-public and provide accessors if needed.(ÍƒÎ¥üÿÿÿÿ8¼ĞŞ†ç1J$609f5897-7f65-47f7-a147-1498a996172a
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¡üåñ8¾ĞŞ†ç1J$86de3bfe-686a-4820-abb5-ebf021be9cd4

@@ -17,6 +17,8 @@ public class NotesViewModel extends AndroidViewModel {
     public LiveData<List<Notes>> lotToHigh;
     public LiveData<List<Notes>> filterbydate;
 
+    public LiveData<List<Notes>> searchbyquery;
+
     public NotesViewModel(Application application) {
         super(application);
         noteRepository = new NoteRepository(application);
@@ -24,6 +26,7 @@ public class NotesViewModel extends AndroidViewModel {
         highToLow = noteRepository.highToLow;
         lotToHigh = noteRepository.lowToHigh;
         filterbydate = noteRepository.filterbydate;
+
     }
     public void insertNotes(Notes notes){
         noteRepository.insertNotes(notes);
